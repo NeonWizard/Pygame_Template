@@ -2,7 +2,7 @@ from base import *
 import sys
 sys.dont_write_bytecode = True
 
-class Platformer(Base):
+class Game(Base):
 	def __init__(self, title, width, height, framerate, fullscreen):
 		Base.__init__(self, title, width, height, framerate, fullscreen)
 
@@ -14,5 +14,5 @@ class Platformer(Base):
 
 
 if __name__ == "__main__":
-	p = Platformer(config.SCREEN_TITLE, config.SCREEN_WIDTH, config.SCREEN_HEIGHT, config.FRAMERATE, config.SCREEN_FULLSCREEN)
-	p.main()
+	g = Game(config.SCREEN_TITLE, config.SCREEN_WIDTH, config.SCREEN_HEIGHT, config.FRAMERATE, config.SCREEN_FULLSCREEN)
+	g.main()
