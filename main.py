@@ -1,6 +1,4 @@
 from base import *
-import sys
-sys.dont_write_bytecode = True
 
 class Game(Base):
 	def __init__(self, title, width, height, framerate, fullscreen):
