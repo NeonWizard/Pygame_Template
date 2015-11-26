@@ -1,5 +1,4 @@
 import pygame, sys
-sys.dont_write_bytecode = True
 from pygame.locals import *
 
 import config
