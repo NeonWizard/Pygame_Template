@@ -18,7 +18,7 @@ class Base:
 		self.clock = pygame.time.Clock()
 		self.framerate = framerate
 
-	def logic(self, keys, newkeys, buttons, newbuttons, mousepos, delta):
+	def logic(self, keys, newkeys, buttons, newbuttons, mousepos, lastmousepos, delta):
 		raise NotImplementedError()
 
 	def paint(self, surface):
@@ -35,6 +35,7 @@ class Base:
 
 			newkeys = set()
 			newbuttons = set()
+			lastmousepos = mousepos
 
 			for event in pygame.event.get():
 				if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
@@ -59,7 +60,7 @@ class Base:
 				if event.type == KEYUP:
 					keys.discard(event.key)
 
-			self.logic(keys, newkeys, buttons, newbuttons, mousepos, delta)
+			self.logic(keys, newkeys, buttons, newbuttons, mousepos, lastmousepos, delta)
 			self.paint(self.window)
 
 			pygame.display.update()

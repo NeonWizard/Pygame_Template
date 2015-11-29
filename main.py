@@ -7,7 +7,7 @@ class Game(Base):
 	def __init__(self, title, width, height, framerate, fullscreen):
 		Base.__init__(self, title, width, height, framerate, fullscreen)
 
-	def logic(self, keys, newkeys, buttons, newbuttons, mousepos, delta):
+	def logic(self, keys, newkeys, buttons, newbuttons, mousepos, lastmousepos, delta):
 		pass
 
 	def paint(self, surface):
