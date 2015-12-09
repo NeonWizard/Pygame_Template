@@ -6,6 +6,8 @@ import config
 
 pygame.init()
 
+font = pygame.font.Font(None, 42)
+
 class Base:
 	def __init__(self, title, width, height, framerate, fullscreen):
 		if not fullscreen:
@@ -71,5 +73,6 @@ class Base:
 
 			self.logic(keys, newkeys, buttons, newbuttons, mousepos, lastmousepos, delta)
 			self.paint(self.window)
+			self.window.blit(font.render("FPS: %i" % self.clock.get_fps(), True, (255, 255, 255)), (0, 0))
 
 			pygame.display.update()
