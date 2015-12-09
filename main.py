@@ -6,6 +6,7 @@ from base import *
 class Game(Base):
 	def __init__(self, title, width, height, framerate, fullscreen):
 		Base.__init__(self, title, width, height, framerate, fullscreen)
+		self.loadFolders(images=True)
 
 	def logic(self, keys, newkeys, buttons, newbuttons, mousepos, lastmousepos, delta):
 		pass

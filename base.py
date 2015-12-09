@@ -1,5 +1,6 @@
 import pygame, sys
 from pygame.locals import *
+import os
 
 import config
 
@@ -23,6 +24,14 @@ class Base:
 
 	def paint(self, surface):
 		raise NotImplementedError()
+
+	def loadFolders(self, images=False, sounds=False, music=False):
+		if images:
+			self.images = {str(i)[:-4]:pygame.image.load("images/"+i) for i in os.listdir("images") if os.path.isfile("images/"+i) if i[0] != "."}
+		if sounds:
+			self.sounds = {str(i)[:-4]:pygame.mixer.Sound("sounds/"+i) for i in os.listdir("sounds") if os.path.isfile("sounds/"+i)}
+		if music:
+			self.music = {str(i)[:-4]:"music/"+i for i in os.listdir("music") if os.path.isfile("music/"+i)}
 
 	def main(self):
 		keys = set()
