@@ -5,6 +5,9 @@ __pycache__/
 # C extensions
 *.so
 
+# annoying hidden mac files
+._*.*
+
 # Distribution / packaging
 .Python
 env/
